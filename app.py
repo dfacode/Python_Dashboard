@@ -7,13 +7,13 @@ import plotly.express as px
 # --- Configuração da Página ---
 # Define o título da página, o ícone e o layout para ocupar a largura inteira.
 st.set_page_config(
-    page_title="Dashboard de Salários na Área de Dados",
+    page_title="Diogo Alves - Dashboard de Salários na Área de Dados",
     page_icon="📊",
     layout="wide",
 )
 
 # --- Carregamento dos dados ---
-df = pd.read_csv("https://raw.githubusercontent.com/vqrca/dashboard_salarios_dados/refs/heads/main/dados-imersao-final.csv")
+df = pd.read_csv("https://raw.githubusercontent.com/dfacode/Python_Dashboard/refs/heads/main/dados_imersao_final.csv")
 
 # --- Barra Lateral (Filtros) ---
 st.sidebar.header("🔍 Filtros")
@@ -44,7 +44,7 @@ df_filtrado = df[
 ]
 
 # --- Conteúdo Principal ---
-st.title("🎲 Dashboard de Análise de Salários na Área de Dados")
+st.title("🎲 Dashboard de Análise de Salários na Área de Dados (by Diogo Alves)")
 st.markdown("Explore os dados salariais na área de dados nos últimos anos. Utilize os filtros à esquerda para refinar sua análise.")
 
 # --- Métricas Principais (KPIs) ---
@@ -136,5 +136,5 @@ with col_graf4:
         st.warning("Nenhum dado para exibir no gráfico de países.")
 
 # --- Tabela de Dados Detalhados ---
-st.subheader("Dados Detalhados")
+st.subheader("Fonte de Dados")
 st.dataframe(df_filtrado)
